@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <title>Team's Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css.css" type="text/css">
+
+</head>
+
+<body onload="Comecar()" onunload="Parar()" cz-shortcut-listen="true">
+    <table border="1" width="100%">
+        <tbody>
+            <tr>
+                <td nowrap="" bgcolor="#aaaaee" align="center"><img src="img/smallballoontransp.png" alt="">
+                    <font color="#000000">BOCA</font>
+                </td>
+                <td bgcolor="#aaaaee" width="99%">
+                    Username: Competidor (site=1)
+                    <img alt="preto" width="10" src="img/preto.png">
+                    <img alt="branco" width="10" src="img/preto.png">
+                </td>
+                <td bgcolor="#aaaaee" align="center" nowrap="">&nbsp;contest not running&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+    <table border="0" width="100%" align="center">
+        <tbody>
+            <tr>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="problem.html">Problems</a>
+                </td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="run.html">Runs</a></td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="score.html">Score</a></td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold"
+                        href="clar.html">Clarifications</a></td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="task.html">Tasks</a></td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="files.html">Backups</a>
+                </td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="option.html">Options</a>
+                </td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="index.html">Logout</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table width="100%" border="1">
+        <tbody>
+            <tr>
+                <!--  <td><b>Clar #</b></td>-->
+                <td><b>Time</b></td>
+                <td><b>Problem</b></td>
+                <!--  <td><b>Status</b></td>-->
+                <td><b>Question</b></td>
+                <td><b>Answer</b></td>
+            </tr>
+        </tbody>
+    </table><br>
+    <center><b>
+            <font color="#ff0000">NO CLARIFICATIONS AVAILABLE</font>
+        </b></center>
+    <br><br>
+    <center><b>To submit a clarification, just fill in the following fields</b></center>
+    <form name="form1" method="post" action="*">
+        <input type="hidden" name="confirmation" value="noconfirm">
+        <center>
+            <table border="0">
+                <tbody>
+                    <tr>
+                        <td width="13%" align="right">Problem:</td>
+                        <td width="87%">
+                            <select name="problem" onclick="Arquivo()">
+                                <option value="0">General</option>
+                                <option value="1">A</option>
+                                <option value="2">B</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="13%" align="right">Clarification:</td>
+                        <td width="87%">
+                            <textarea name="message" cols="60" rows="8" maxlength="2000"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        <script language="javascript">
+            function conf() {
+                if (confirm("Confirm clarification?")) {
+                    document.form1.confirmation.value = 'confirm';
+                }
+            }
+        </script>
+        <center>
+            <input type="submit" name="Submit" value="Send" onclick="conf()">
+            <input type="reset" name="Submit2" value="Clear">
+        </center>
+    </form>
+
+    <br><br>
+    <!-- Alerta do Bootstrap -->
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Aviso!</strong> Nesta tela você poderá enviar perguntas à organização.
+        <br>
+        Dúvidas quanto a interpretação ou execução do código não serão respondidas.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+</body>
+
+</html>

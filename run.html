@@ -1,0 +1,167 @@
+<html>
+
+<head>
+    <title>Team's Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css.css" type="text/css">
+</head>
+
+<body onload="Comecar()" onunload="Parar()" cz-shortcut-listen="true">
+    <table border="1" width="100%">
+        <tbody>
+            <tr>
+                <td nowrap="" bgcolor="#aaaaee" align="center"><img src="img/smallballoontransp.png" alt="">
+                    <font color="#000000">BOCA</font>
+                </td>
+                <td bgcolor="#aaaaee" width="99%">
+                    Username: Competidor (site=1)
+                    <img alt="preto" width="10" src="img/preto.png">
+                </td>
+                <td bgcolor="#aaaaee" align="center" nowrap="">&nbsp;contest not running&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+    <table border="0" width="100%" align="center">
+        <tbody>
+            <tr>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="problem.html">Problems</a>
+                </td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="run.html">Runs</a></td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="score.html">Score</a></td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold"
+                        href="clar.html">Clarifications</a></td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="task.html">Tasks</a></td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="files.html">Backups</a>
+                </td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="option.html">Options</a>
+                </td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="index.html">Logout</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table width="100%" border="1">
+        <tbody>
+            <tr>
+                <td><b>Run #</b></td>
+                <td><b>Time</b></td>
+                <td><b>Problem</b></td>
+                <td><b>Language</b></td>
+                <td><b>Answer</b></td>
+                <td><b>File</b></td>
+            </tr>
+            <tr>
+                <td nowrap="">6588201</td>
+                <td nowrap="">10</td>
+                <td nowrap="">A</td>
+                <td nowrap="">Python2</td>
+                <td>NO - Runtime error</td>
+                <td nowrap=""><a>estacionamento.py</a></td>
+            </tr>
+            <tr>
+                <td nowrap="">7421802</td>
+                <td nowrap="">12</td>
+                <td nowrap="">A</td>
+                <td nowrap="">Python3</td>
+                <td>YES <img alt="preto" width="15" src="img/preto.png"></td>
+                <td nowrap=""><a>estacionamento.py</a></td>
+            </tr>
+            <tr>
+                <td nowrap="">26996303</td>
+                <td nowrap="">44</td>
+                <td nowrap="">B</td>
+                <td nowrap="">C++11</td>
+                <td>NO - Wrong answer</td>
+                <td nowrap=""><a>compras.cpp</a></td>
+            </tr>
+            <tr>
+                <td nowrap="">874485704</td>
+                <td nowrap="">1457</td>
+                <td nowrap="">B</td>
+                <td nowrap="">C++11</td>
+                <td>NO - Wrong answer</td>
+                <td nowrap=""><a>compras.cpp</a></td>
+            </tr>
+            <tr>
+                <td nowrap="">878671805</td>
+                <td nowrap="">1464</td>
+                <td nowrap="">B</td>
+                <td nowrap="">C++11</td>
+                <td>YES <img alt="branco" width="15" src="img/preto.png"></td>
+                <td nowrap=""><a>compras.cpp</a></td>
+            </tr>
+        </tbody>
+    </table><br><br>
+    <center><b>To submit a program, just fill in the following fields:</b></center>
+    <form name="form1" enctype="multipart/form-data" method="post" action="run.html">
+        <input type="hidden" name="confirmation" value="noconfirm">
+        <center>
+            <table border="0">
+                <tbody>
+                    <tr>
+                        <td width="25%" align="right">Problem:</td>
+                        <td width="75%">
+                            <select name="problem" onclick="Arquivo()">
+                                <option selected="" value="-1"> -- </option>
+                                <option value="1">A</option>
+                                <option value="2">B</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="25%" align="right">Language:</td>
+                        <td width="75%">
+                            <select name="language" onclick="Arquivo()">
+                                <option selected="" value="-1"> -- </option>
+                                <option value="1">C</option>
+                                <option value="2">C++11</option>
+                                <option value="3">Java</option>
+                                <option value="4">Python2</option>
+                                <option value="5">Python3</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="25%" align="right">Source code:</td>
+                        <td width="75%">
+                            <input type="file" name="sourcefile" size="40" onclick="Arquivo()">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        <script language="javascript">
+            function conf() {
+                if (document.form1.problem.value != '-1' && document.form1.language.value != '-1') {
+                    if (confirm("Confirm submission?")) {
+                        document.form1.confirmation.value = 'confirm';
+                    }
+                } else {
+                    alert('Invalid problem and/or language');
+                }
+            }
+        </script>
+        <center>
+            <input type="submit" name="Submit" value="Send" onclick="conf()">
+            <input type="reset" name="Submit2" value="Clear">
+        </center>
+    </form>
+
+    <br><br>
+    <!-- Alerta do Bootstrap -->
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Aviso!</strong> Nesta tela são listadas suas submissões. No dia da competição, utilize as opções abaixo
+        para enviar o código fonte para cada um dos problemas. <br>
+        Se você programa em java, lembre-se que o nome da classe e o nome do arquivo devem ser iguais ao basename
+        apresentado na tela de "Problems".
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+
+</body>
+
+</html>

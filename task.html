@@ -1,0 +1,107 @@
+<html>
+
+<head>
+    <title>Team's Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css.css" type="text/css">
+</head>
+
+<body onload="Comecar()" onunload="Parar()" cz-shortcut-listen="true">
+    <table border="1" width="100%">
+        <tbody>
+            <tr>
+                <td nowrap="" bgcolor="#aaaaee" align="center"><img src="img/smallballoontransp.png" alt="">
+                    <font color="#000000">BOCA</font>
+                </td>
+                <td bgcolor="#aaaaee" width="99%">
+                    Username: Competidor (site=1)
+                    <img alt="preto" width="10" src="img/preto.png">
+                    <img alt="branco" width="10" src="img/preto.png">
+                </td>
+                <td bgcolor="#aaaaee" align="center" nowrap="">&nbsp;contest not running&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+    <table border="0" width="100%" align="center">
+        <tbody>
+            <tr>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="problem.html">Problems</a>
+                </td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="run.html">Runs</a></td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="score.html">Score</a></td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold"
+                        href="clar.html">Clarifications</a></td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="task.html">Tasks</a></td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="files.html">Backups</a>
+                </td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="option.html">Options</a>
+                </td>
+                <td align="center" width="12%"><a class="menu" style="font-weight:bold" href="index.html">Logout</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table width="100%" border="1">
+        <tbody>
+            <tr>
+                <td><b>Task #</b></td>
+                <td><b>Time</b></td>
+                <td><b>Description</b></td>
+                <td><b>File</b></td>
+                <td><b>Status</b></td>
+            </tr>
+        </tbody>
+    </table><br>
+    <center><b>
+            <font color="#ff0000">NO TASKS FOUND</font>
+        </b></center>
+    <br><br>
+    <center><b>To submit a file for printing, just fill in the following field:</b></center>
+    <form name="form1" enctype="multipart/form-data" method="post" action="*">
+        <!--<input type="hidden" name="MAX_FILE_SIZE" value="100000">-->
+        <input type="hidden" name="confirmation" value="noconfirm">
+        <center>
+            <table border="0">
+                <tbody>
+                    <tr>
+                        <td width="25%" align="right">File name:</td>
+                        <td width="75%">
+                            <input type="file" name="filename" size="40" onclick="Arquivo()">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        <script language="javascript">
+            function conf() {
+                if (confirm("Confirm?")) {
+                    document.form1.confirmation.value = 'confirm';
+                }
+            }
+        </script>
+        <center>
+            <input type="submit" name="Submit" value="Send" onclick="conf()">
+            <input type="reset" name="Submit2" value="Clear">
+        </center>
+        <br><br>
+        <center><b>If you needed staff assistance, please click
+                on the button above and wait.</b><br>
+            <input type="submit" name="Submit" value="S.O.S." onclick="conf()">
+        </center>
+    </form>
+
+    <br><br>
+    <!-- Alerta do Bootstrap -->
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Aviso!</strong> Você pode solicitar a impressão de um arquivo durante a competição.
+        Seja de código ou outras anotações.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+</body>
+
+</html>
